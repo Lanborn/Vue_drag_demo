@@ -1,24 +1,9 @@
-import { defineStore } from "pinia";
-import { Names } from "./enums/store-name";
+import { useMainStore } from "./modules/Main";
+import { useComposeStore } from "./modules/Compose";
 
-export const useStore = defineStore(Names.MAIN, {
-  state: () => {
-    return {
-      canvasStyleData: {
-        // 页面全局数据
-        width: 1200,
-        height: 740,
-        scale: 100,
-        color: "#000",
-        opacity: 1,
-        background: "#fff",
-        fontSize: 14,
-      },
-      componentData: [],
-      curComponent: null,
-      curComponentIndex: null,
-    };
-  },
-  getters: {},
-  actions: {},
-});
+export default function useStore() {
+  return {
+    main: useMainStore,
+    compose: useComposeStore,
+  };
+}
