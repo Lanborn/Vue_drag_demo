@@ -3,7 +3,9 @@
     <toolbar></toolbar>
     <main>
       <!-- left components -->
-      <section class="left"></section>
+      <section class="left">
+        <component-list></component-list>
+      </section>
       <!-- center canvas -->
       <section class="center">
         <div class="content">
@@ -17,6 +19,7 @@
 </template>
 
 <script lang="ts">
+import ComponentList from "@/components/componentList/src/componentList.vue";
 import Editor from "@/components/Editor/index.vue";
 
 import Toolbar from "@/components/Toolbar/src/toolbar.vue";
@@ -26,6 +29,7 @@ export default defineComponent({
   components: {
     Editor,
     Toolbar,
+    ComponentList,
   },
   setup() {
     return {};
